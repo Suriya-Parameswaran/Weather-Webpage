@@ -1,0 +1,101 @@
+@import url("vars.css");
+
+.bottom-container {
+  background-color: var(--secondary-text-color);
+  bottom: 50px;
+  position: relative;
+}
+
+.bottom-top-container-heading {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.things-to-sort {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px 20px;
+  justify-content: end;
+}
+
+.sort {
+  column-gap: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: medium;
+  font-weight: 500;
+  justify-self: end;
+}
+
+.sort-icon {
+  height: 20px;
+  width: 15px;
+}
+
+.sort-icon:hover {
+  cursor: pointer;
+}
+
+.bottom-top-container {
+  color: var(--primary-text-color);
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 80px;
+}
+
+.humidity-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.bottom-cards-container {
+  display: grid;
+  gap: 20px 50px;
+  grid-auto-rows: minmax(30px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 30px 80px 60px;
+}
+
+.bottom-cards {
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  display: grid;
+  gap: 10px 30px;
+  justify-content: space-between;
+  padding: 20px;
+  grid-template-areas:
+    "a b"
+    "c d";
+}
+
+.continent-name {
+  color: var(--penitentiary-text-color);
+  font-size: 18px;
+  grid-area: a;
+}
+
+.city-temperature {
+  font-size: 24px;
+  grid-area: b;
+}
+
+.city-name-time {
+  font-size: 18px;
+  grid-area: c;
+}
+
+.city-humidity {
+  font-size: 18px;
+  grid-area: d;
+}
+
+.bottom-cards:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+@media screen and (width <= 850px) {
+  .things-to-sort {
+    flex-wrap: wrap;
+  }
+}

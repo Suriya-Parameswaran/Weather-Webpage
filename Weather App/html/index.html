@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Weather</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Top and mid container" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/general/webpageIcon.png"
+    />
+    <link href="../css/topContainer.css" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/middleContainer.css" rel="stylesheet" />
+    <link href="../css/bottomContainer.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../javascript/index.js" type="module" defer></script>
+  </head>
+  <body>
+    <section class="top-container">
+      <div class="top-content-slide-in">
+        <img
+          id="selected-city-image"
+          class="top-container-city-image"
+          src="..\assets\cities\anadyr.svg"
+          alt="city-image"
+        />
+        <div class="selected-city">
+          <input
+            type="text"
+            list="city-option"
+            name="citylist"
+            placeholder=""
+            class="select-city"
+            onfocus="this.value=''"
+          />
+          <datalist id="city-option" class="city-option"> </datalist>
+          <section>
+            <div class="time">
+              <time class="hour-minute">
+                <p id="hours"></p>
+                <p id="minutes"></p>
+                <p class="seconds" id="seconds"></p>
+              </time>
+              <img
+                class="am-pm"
+                id="am-pm-img"
+                src="..\assets\general\amState.svg"
+                alt="am-or-pm"
+              />
+            </div>
+            <p class="date" id="date"></p>
+          </section>
+        </div>
+        <div class="temp-humidity-precipitation">
+          <p class="weather-variables">Temp &deg;C</p>
+          <p class="weather-variables-value" id="tempc"></p>
+          <p class="weather-variables">Temp F</p>
+          <p class="weather-variables-value" id="tempf"></p>
+        </div>
+        <div class="pipe-space">
+          <div class="pipe"></div>
+          <div class="pipe"></div>
+        </div>
+        <div class="temp-humidity-precipitation">
+          <p class="weather-variables">Humidity</p>
+          <p class="weather-variables-value" id="humidity"></p>
+          <p class="weather-variables">Precipitation</p>
+          <p class="weather-variables-value" id="precipitation"></p>
+        </div>
+        <div class="hourly-info">
+          <div class="hourly-column">
+            <p>NOW</p>
+            <p class="pipe-in-hour"></p>
+            <img
+              class="weather-icon"
+              src="..\assets\weather\cloudyIcon.svg"
+              alt="cloudy"
+            />
+            <p class="temp-change"></p>
+          </div>
+          <div>
+            <div class="pipe-vanish"></div>
+          </div>
+          <div class="hourly-column">
+            <p class="hour-change"></p>
+            <p class="pipe-in-hour"></p>
+            <img
+              class="weather-icon"
+              src="..\assets\weather\rainyIconBlack.svg"
+              alt="rainy"
+            />
+            <p class="temp-change"></p>
+          </div>
+          <div>
+            <div class="pipe-vanish"></div>
+          </div>
+          <div class="hourly-column">
+            <p class="hour-change"></p>
+            <p class="pipe-in-hour"></p>
+            <img
+              class="weather-icon"
+              src="..\assets\weather\windyIcon.svg"
+              alt="windy"
+            />
+            <p class="temp-change"></p>
+          </div>
+          <div>
+            <div class="pipe-vanish"></div>
+          </div>
+          <div class="hourly-column">
+            <p class="hour-change"></p>
+            <p class="pipe-in-hour"></p>
+            <img
+              class="weather-icon"
+              src="..\assets\weather\rainyIcon.svg"
+              alt="rainy"
+            />
+            <p class="temp-change"></p>
+          </div>
+          <div>
+            <div class="pipe-vanish"></div>
+          </div>
+          <div class="hourly-column">
+            <p class="hour-change"></p>
+            <p class="pipe-in-hour"></p>
+            <img
+              class="weather-icon"
+              src="..\assets\weather\windyIcon.svg"
+              alt="windy"
+            />
+            <p class="temp-change"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mid-container">
+      <div class="cities-container">
+        <h3 class="cities-container-heading">Top cities around world</h3>
+        <section>
+          <div class="selector">
+            <div class="weather-selection">
+              <img
+                src="..\assets\weather\sunnyIcon.svg"
+                alt="sunny"
+                id="sunny-icon"
+                class="type-icon"
+              />
+            </div>
+            <div class="weather-selection">
+              <img
+                src="..\assets\weather\snowflakeIcon.svg"
+                alt="snowflake"
+                id="snowy-icon"
+                class="type-icon"
+              />
+            </div>
+            <div class="weather-selection">
+              <img
+                src="..\assets\weather\rainyIcon.svg"
+                alt="rainy"
+                id="rainy-icon"
+                class="type-icon"
+              />
+            </div>
+            <label class="selector-sort">Display top</label>
+            <input
+              type="number"
+              class="city-count"
+              placeholder="3"
+              min="3"
+              max="10"
+            />
+          </div>
+        </section>
+      </div>
+      <section class="card-content-container">
+        <button class="left-button">&lt;</button>
+        <div class="card-container"></div>
+        <button class="right-button">&gt;</button>
+      </section>
+    </section>
+    <section class="bottom-container">
+      <div class="bottom-top-container">
+        <h6 class="bottom-top-container-heading">
+          Cities across continents at a Glance
+        </h6>
+        <div class="things-to-sort">
+          <div class="sort">
+            Continent name
+            <img
+              class="sort-icon sort-continent"
+              src="..\assets\general\arrowDown.svg"
+              alt="sorting-icon"
+            />
+          </div>
+          <div class="sort">
+            Temperature
+            <img
+              class="sort-icon sort-temperature"
+              src="..\assets\general\arrowDown.svg"
+              alt="sorting-icon"
+            />
+          </div>
+        </div>
+      </div>
+      <section class="bottom-cards-container"></section>
+    </section>
+  </body>
+</html>

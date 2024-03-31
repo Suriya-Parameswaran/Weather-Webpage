@@ -1,0 +1,254 @@
+@import url("vars.css");
+
+.top-container {
+  background-size: cover;
+  background-image: linear-gradient(rgba(0 0 0 / 40%), rgba(0 0 0 / 40%)),
+    url("../assets/general/backGround.svg");
+}
+
+.top-content-slide-in {
+  animation: slidefromtop 1s ease-in;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1px;
+  padding: 40px;
+  padding-bottom: 50px;
+  white-space: nowrap;
+}
+
+@keyframes slidefromtop {
+  0% {
+    transform: translateY(-200px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.top-container-city-image {
+  bottom: 28px;
+  height: 100px;
+  position: relative;
+  width: 90px;
+}
+
+.selected-city {
+  display: grid;
+}
+
+.select-city {
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 300;
+  height: 50px;
+  letter-spacing: 2px;
+  margin: 20px 0 0 40px;
+  padding: 10px;
+  text-transform: capitalize;
+  width: 170px;
+}
+
+.time {
+  color: var(--quaternary-text-color);
+  display: flex;
+  font-size: 23px;
+  padding: 5px 0 2px 50px;
+}
+
+.hour-minute {
+  align-items: flex-end;
+  display: flex;
+  padding-right: 8px;
+}
+
+.date {
+  font-size: 15px;
+  padding-bottom: 5px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.seconds {
+  bottom: 4px;
+  color: var(--quaternary-text-color);
+  font-size: 13px;
+  position: relative;
+}
+
+.am-pm {
+  bottom: 5px;
+  height: 50px;
+  position: relative;
+  width: 50px;
+}
+
+.temp-humidity-precipitation {
+  display: grid;
+  padding: 0 30px;
+  place-items: center center;
+}
+
+.weather-variables {
+  font-size: 16px;
+}
+
+.weather-variables-value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.weather-icon,
+.weather-icon-now {
+  height: 25px;
+  width: 25px;
+}
+
+.pipe-space {
+  align-items: center;
+  display: grid;
+  position: relative;
+  row-gap: 30px;
+}
+
+.pipe {
+  background-color: var(--primary-text-color);
+  height: 70px;
+  width: 1px;
+}
+
+.pipe-in-hour {
+  background-color: var(--primary-text-color);
+  height: 15px;
+  width: 1px;
+}
+
+.pipe-vanish {
+  background-color: var(--primary-text-color);
+  height: 15px;
+  margin-top: 45px;
+  width: 1px;
+}
+
+.hourly-info {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-evenly;
+  letter-spacing: 0;
+  margin-left: 10px;
+  position: relative;
+  right: 20px;
+  top: 15px;
+  width: 60%;
+}
+
+.hourly-column {
+  display: grid;
+  justify-items: center;
+}
+
+@media screen and (width <= 1000px) {
+  .pipe-vanish {
+    display: none;
+  }
+}
+
+@media screen and (width <= 900px) {
+  .temp-humidity-precipitation,
+  .hourly-info {
+    right: 15px;
+    transition: 0.5s;
+  }
+
+  .hourly-info > div {
+    padding: 3px;
+    transition: 0.5s;
+  }
+
+  .weather-variables-value {
+    font-size: 32px;
+    transition: 0.5s;
+  }
+}
+
+@media screen and (width <= 850px) {
+  .temp-humidity-precipitation,
+  .pipe-space {
+    font-size: 1px;
+    transition: 0.5s;
+  }
+
+  .hour-minute {
+    font-size: 20px;
+  }
+
+  .date,
+  .hourly-info,
+  .seconds {
+    font-size: 14px;
+    transition: 0.5s;
+  }
+
+  .top-container {
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 0.5s;
+  }
+
+  .hourly-column img {
+    height: 20px;
+    transition: 0.5s;
+    width: 20px;
+  }
+
+  .top-container #city-image {
+    height: 90px;
+    transition: 0.5s;
+    width: 70px;
+  }
+
+  .temp-humidity-precipitation {
+    padding: 0 20px;
+    transition: 0.5s;
+  }
+
+  .weather-variables-value {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+@media screen and (width <= 750px) {
+  .temp-humidity-precipitation {
+    padding: 0 10px 0 15px;
+    transition: 0.5s;
+  }
+
+  .hourly-info {
+    padding-left: 20px;
+    position: relative;
+    right: 30px;
+  }
+}
+
+@media screen and (width <=700px) {
+  .top-container {
+    padding-left: 5px;
+    padding-right: 10px;
+    transition: 0.5s;
+  }
+
+  .weather-variables {
+    font-size: 13px;
+  }
+
+  .weather-variables-value {
+    font-weight: 500;
+  }
+
+  .temp-humidity-precipitation {
+    padding-left: 10px;
+  }
+}
